@@ -35,6 +35,30 @@ const userSchema = new mongoose.Schema(
 			type: Boolean,
 			default: false,
 		},
+		description: {
+			type: String,
+			max: 256,
+			default: "Hey there! I am using mern-stack-social-media-application-tutorial"
+		},
+		city: {
+			type: String,
+			max: 16,
+			default: ""
+		},
+		from: {
+			type: String,
+			max: 16,
+			default: ""
+		},
+		relationship: {
+			type: Number,
+			enum: [0, 1, 2, 3],
+			default: 0
+			// 0 = NA
+			// 1 = single
+			// 2 = in relationship
+			// 3 = it's complicated
+		}
 	},
 	{ timestamps: true }
 );
